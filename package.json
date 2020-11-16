@@ -12,7 +12,10 @@
   "dependencies": {
     "apollo-server": "^2.19.0",
     "apollo-server-express": "^2.19.0",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "mysql2": "^2.2.5",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.29"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",
