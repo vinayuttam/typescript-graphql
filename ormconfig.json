@@ -1,12 +1,4 @@
 {
-  "type": "mysql",
-  "host": "localhost",
-  "port": 3306,
-  "username": "root",
-  "password": "Bravia@32",
-  "database": "typescript_dev",
-  "synchronize": true,
-  "logging": true,
   "entities": [
     "dist/db/entities/**.js"
   ],
