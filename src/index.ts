@@ -4,8 +4,6 @@ import { createServer } from 'http';
 import { ApolloServer, gql } from 'apollo-server-express';
 import { createConnection } from 'typeorm';
 
-import { User } from './db/entities/User';
-
 import schema from './schema';
 import config from './config';
 

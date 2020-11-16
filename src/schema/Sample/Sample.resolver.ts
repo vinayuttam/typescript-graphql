@@ -8,7 +8,7 @@ const TOPIC = 'SEND';
 const SampleQueries = {
   hello: {
     type: SampleType,
-    resolve: () => {
+    resolve: async () => {
       pubsub.publish(TOPIC, { text: 'Hello from GraphQL SubScription' });
       return { text: 'Hello from GraphQL Query' }
     },
