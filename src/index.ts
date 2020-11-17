@@ -30,10 +30,14 @@ server.installSubscriptionHandlers(httpServer);
 createConnection().then(async connection => {
   console.log('Successfully connected to database!');
 
-  httpServer.listen({ port: config.port }, () => {
-    console.log(`🚀 Server ready at http://localhost:${config.port}${server.graphqlPath}`);
-    console.log(`🚀 Subscriptions ready at ws://localhost:${config.port}${server.subscriptionsPath}`);
-  });
+  httpServer.
+    on('error', () => {
+      console.log('Something wrong, could not connect to GraphQL Server');
+    })
+    .listen({ port: config.port }, () => {
+      console.log(`🚀 Server ready at http://localhost:${config.port}${server.graphqlPath}`);
+      console.log(`🚀 Subscriptions ready at ws://localhost:${config.port}${server.subscriptionsPath}`);
+    });
 }).catch(error => {
   console.log(error)
   process.exit(1);
